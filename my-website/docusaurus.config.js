@@ -81,7 +81,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Refract',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -91,26 +91,50 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Concepts',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog',
+            label: 'References',
+            position: 'left'
+          },
+          {to: '/',
+            label: 'Tutorials',
+            position: 'left'
+          },
+          {
+            to: '/',
+            label: 'Community',
+            position: 'right',
+
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
           },
+
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Learn Refract',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Quickstart',
+                to: '/docs/getStarted/quickstart',
               },
+                {
+                label: 'Installation',
+                to: '/docs/getStarted/installation',
+              },
+              {
+                label: 'Components',
+                to: '/docs/getStarted/components',
+              },
+
+
             ],
           },
           {
@@ -131,11 +155,11 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'Resources',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'API Reference',
+                to: '/docs/',
               },
               {
                 label: 'GitHub',
@@ -144,7 +168,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Technical Writing Mentorship Programme.`,
       },
       prism: {
         theme: prismThemes.github,
