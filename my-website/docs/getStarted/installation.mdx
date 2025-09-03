@@ -2,6 +2,82 @@
 sidebar_position: 3
 slug: installation
 title: Installation
-description: This 
-date: 2024-02-20
+description: This section provides a detailed guide on how to install Refract framework
+date: 2025-09-02
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+## Prerequisites
+
+To install Refract, ensure you have the following installed on your device:
+
+1. A recent version of [Node.js](https://nodejs.org/en)
+
+2. Familiar with the command line 
+
+## Steps
+Follow these steps to install Refract:
+
+**Step 1:** Create a folder where you want to build your application.
+
+**Step 2**: Enter this command.
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+     npm install refract-js
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+      pnpm install refract.js
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+      yarn install refract.js
+  </TabItem>
+    <TabItem value="bun" label="bun">
+      bun install refract.js
+   </TabItem>
+</Tabs>
+
+This command installs and runs create-refract, the official project scaffolding tool for Refract. The CLI will guide you through a series of prompts, allowing you to choose options such as starter templates, TypeScript support, and whether to include Refract’s full-stack framework.
+
+
+Once the project is created, follow the instructions to install the dependencies and start the development server:
+
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    │  cd refract-project
+
+    │  npm install
+
+    │  npm run dev
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+     │  cd refract-project
+
+     │  pnpm install
+
+     │  pnpm dev
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+      │  cd refract-project
+
+      │  yarn install
+
+      │  yarn dev
+
+    </TabItem>
+    <TabItem value="bun" label="bun">
+    │  cd refract-project
+
+    │  bun install
+
+    │  bun dev
+
+   </TabItem>
+</Tabs>
+
+You should now have your Refract project running!
+
+

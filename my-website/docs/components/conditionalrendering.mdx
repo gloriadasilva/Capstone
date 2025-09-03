@@ -2,6 +2,51 @@
 sidebar_position: 5
 slug: conditional rendering
 title: Conditional Rendering
-description: This 
-date: 2024-02-20
+description: This section explains how to conditionally render logic in refract
+date: 2025-09-03
 ---
+
+Sometimes you need your UI to show different content based on certain conditions. In Refract, this is called conditional rendering. It allows your components to decide what to display depending on the state or props.
+
+## How to Conditionally Render JSX
+
+Refract uses plain JavaScript expressions inside JSX, so you can rely on familiar patterns like the ternary operator and the logical AND operator.
+
+**i. Ternary Operator**
+
+The ternary operator `condition ? expressionIfTrue :expressionIfFalse` is useful when you want to render one of two possible elements.
+
+``` jsx showLineNumbers 
+const LoginStatus = createComponent(({ props }) => {
+  return (
+    <div>
+      {props.isLoggedIn ? <p>Welcome back!</p> : <p>Please log in.</p>}
+    </div>
+  );
+});
+
+// Usage
+<LoginStatus isLoggedIn={true} />   // Renders: Welcome back!
+<LoginStatus isLoggedIn={false} />  // Renders: Please log in.
+
+```
+
+**ii. Logical AND Operator**
+
+The logical AND operator `&&` is useful when you want to render something only if a condition is true.
+
+``` jsx showLineNumbers
+const Notification = createComponent(({ props }) => {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+      {props.hasMessage && <p>You have a new message!</p>}
+    </div>
+  );
+});
+
+// Usage
+<Notification hasMessage={true} />   // Shows "You have a new message!"
+<Notification hasMessage={false} />  // Shows nothing
+```
+

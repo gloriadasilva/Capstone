@@ -2,7 +2,90 @@
 sidebar_position: 4
 slug: jsx in react
 title: JSX in Refract
-description: This 
+description: This section explains how jsx works in refract
 date: 2024-02-20
 
 ---
+
+## What is JSX?
+
+JSX (JavaScript XML) is a syntax extension for JavaScript that looks very similar to HTML. In Refract, JSX is used to describe what the UI should look like inside components. Instead of working with raw DOM APIs or string templates, JSX allows you to write declarative, HTML-like code directly in JavaScript.
+
+Under the hood, JSX is compiled into plain JavaScript function calls that create virtual elements for Refract to render. This makes your code more readable and expressive while still being efficient.
+
+Example:
+``` jsx showLineNumbers
+const Welcome = createComponent(() => {
+  return <h1>Hello, World!</h1>;
+});
+
+``
+
+## How to Convert HTML to JSX
+
+If you already know HTML, writing JSX will feel natural, but there are a few adjustments you need to make when converting HTML into JSX:
+
+**Step 1**: Use className instead of class
+``` html
+<div class="card"></div>
+
+```
+
+``` jsx showLineNumbers
+<div className="card"></div>
+
+```
+**Step 2**: Close all tags, even self-closing ones
+
+``` html showLineNumbers
+<img src="logo.png">
+
+```
+
+``` jsx showLineNumbers
+<img src="logo.png">
+
+```
+becomes:
+``` jsx
+<img src="logo.png" />
+```
+
+**Step 3:** Wrap multiple elements in a parent element or fragment
+``` jsx
+<h1>Title</h1>
+<p>Description</p>
+
+```
+becomes
+```:
+
+<>
+  <h1>Title</h1>
+  <p>Description</p>
+</>
+```
+## The Rules of JSX 
+
+To use JSX effectively in Refract, keep these core rules in mind:
+
+One root element per return: Every component must return a single parent element (or fragment).
+
+CamelCase for attributes: In JSX, event handlers and some properties use camelCase, e.g., onClick, tabIndex.
+
+Expressions inside {}: You can embed JavaScript expressions inside JSX by wrapping them in curly braces.
+``` jsx showLineNumbers
+const Greeting = createComponent(({ lens }) => {
+const name = lens.useRefraction("Gloria");
+return <h1>Hello, {name.value}!</h1>;
+});
+
+```
+
+
+Props look like attributes: Passing data to components works the same way as setting attributes in HTML.																									
+``` jsx showLineNumbers
+<Button label="Click Me" />
+
+```					
+

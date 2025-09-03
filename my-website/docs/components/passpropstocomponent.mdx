@@ -2,7 +2,56 @@
 sidebar_position: 4
 slug: passprops
 title: Pass Props to Components
-description: This 
+description: This section explains how to pass props in refract
 date: 2024-02-20
 
 ---
+
+## What are Props?
+
+Props (short for properties) are how you pass data from one component to another in Refract. They work like parameters to a function—allowing components to be dynamic, reusable, and flexible.
+Think of props as inputs: a parent component can pass information down to its children so that each child can render differently based on the given data.
+
+## How to Pass a Prop to a Component
+
+**1. Passing Props**
+
+Props are written just like HTML attributes when you use a component:
+``` jsx
+const Greeting = createComponent(({ lens, props }) => {
+  return <h1>Hello, {props.name}!</h1>;
+});
+
+// Passing the prop
+<Greeting name="John" />
+```
+Here, the `name` prop is passed to `Greeting`, and the component renders:
+```
+Hello, John!
+```
+**2. Multiple Props**
+
+You can pass multiple props the same way:
+``` jsx
+const UserCard = createComponent(({ props }) => {
+  return (
+    <div>
+      <h2>{props.username}</h2>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+});
+
+// Passing multiple props
+<UserCard username="Ada" age={24} />
+````
+**3. Props as Expressions**
+
+Props don’t have to be static values; they can be JavaScript expressions:
+``` jsx
+const Today = createComponent(({ props }) => {
+  return <p>Today’s date is {props.date}</p>;
+});
+
+<Today date={new Date().toDateString()} />
+```

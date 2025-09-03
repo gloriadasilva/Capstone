@@ -29,24 +29,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Components',
-      items: ['components/introductions', 'components/importexport','components/jsxinrefract','components/passpropstocomponent' ,'components/conditionalrendering',],
-    },
-    {
-      type: 'category',
-      label: 'Refractions',
-      items: ['refractions/refraction'],
-
-    },
-    {
-      type: 'category',
-      label: 'Lens',
-      items: ['lens/lens'],
-
-    },
-    {
-      type: 'category',
-      label : 'Glossary',
-      items: ['glossary/glossary'],
+      items: ['components/importexport','components/jsxinrefract','components/passpropstocomponent' ,'components/conditionalrendering',],
     },
   ],
    

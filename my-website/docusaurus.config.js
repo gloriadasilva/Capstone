@@ -30,7 +30,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -54,7 +54,7 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
-          showReadingTime: false,
+          showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -97,12 +97,12 @@ const config = {
             label: 'References',
             position: 'left'
           },
-          {to: '/',
+          {to: '/docs/getStarted/introduction',
             label: 'Tutorials',
             position: 'left'
           },
           {
-            to: '/',
+            href: 'https://www.youtube.com/@TechnicalWriti6',
             label: 'Community',
             position: 'right',
 

@@ -2,7 +2,90 @@
 sidebar_position: 3
 slug: import export 
 title: Import and Export Components
-description: This 
+description: This section explains how to import and export components
 date: 2024-02-20
 
 ---
+
+In the previous section, you learned how to create and nest components. In this section, you will learn how to import and export components in Refract.
+
+## Import and Export Component
+
+In Refract, components are usually defined in their own files so they can be reused across your project. To make a component available in other files, you **export** it. To use that component in another file, you **import** it.
+
+
+## When to Import and Export Components
+
+You should export a component whenever you want to reuse it outside the file where it was created. For example, if you build a Button component that will be used in different pages, you’ll export it once and import it wherever you need it.
+
+On the other hand, if a component is used only inside the same file (for example, a tiny helper UI inside a bigger parent component), you don’t need to export it.
+
+## How to Import and Export Components
+
+The most common way is to use **default export** and **default import**.
+
+Button.jsx
+``` jsx showLineNumbers
+import { createComponent } from "refract";
+const Button = createComponent(({ lens }) => {
+  return <button>{lens.props.label}</button>;
+});
+export default Button;
+
+```
+
+App.jsx
+
+``` jsx showLineNumbers
+import { createComponent } from "refract";
+import Button from "./Button";
+
+const App = createComponent(() => {
+  return (
+    <div>
+      <h1>Welcome</h1>
+      <Button label="Click Me" />
+    </div>
+  );
+});
+
+export default App;
+```
+Here, Button is exported as the default from its file, and then imported into `App.jsx` for use.
+
+## How to Import and Export Multiple Components From the Same File
+
+Sometimes you might define more than one component in the same file. In this case, you can use named exports.
+
+UI Component.js
+
+``` jsx showLineNumbers
+import { createComponent } from "refract";
+
+export const Button = createComponent(({ lens }) => {
+  return <button>{lens.props.label}</button>;
+});
+
+export const Card = createComponent(({ lens }) => {
+  return <div className="card">{lens.props.children}</div>;
+});
+```
+
+App.jsx
+
+``` jsx showLineNumbers
+import { createComponent } from "refract";
+import { Button, Card } from "./UIComponents";
+
+const App = createComponent(() => {
+  return (
+    <Card>
+      <h2>Hello</h2>
+      <Button label="Click Me" />
+    </Card>
+  );
+});
+
+export default App;
+```
+In this example, `Button` and `Card` are exported by name and then imported together with curly braces.
