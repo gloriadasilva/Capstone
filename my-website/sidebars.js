@@ -29,7 +29,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Components',
-      items: ['components/importexport','components/jsxinrefract','components/passpropstocomponent' ,'components/conditionalrendering',],
+      items: ['components/importexport','components/passpropstocomponent' ,'components/jsxinrefract','components/conditionalrendering',],
     },
   ],
    
