@@ -1,0 +1,66 @@
+.section {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.track {
+  display: inline-flex;
+  animation: scroll-left 15s linear infinite;
+}
+
+.card {
+  min-width: 280px;   /* was 220px → bigger */
+  margin: 0 1.5rem;   /* more spacing between cards */
+  padding: 2rem 2.5rem; /* more padding inside cards */
+  font-size: 1.2rem;  /* increase text size */
+  font-weight: 500;   /* bolder text */
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(135deg, #4e54c8, #4e9eff, #60c0ff);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.08); /* subtle zoom on hover */
+}
+
+.card:nth-child(2n) {
+  background: linear-gradient(135deg, #0f9d58, #22c55e, #a3e635);
+}
+
+/* marquee animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

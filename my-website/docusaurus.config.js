@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Refract',
+  tagline: 'A modern JavaScript framework that allows you to build scalable and responsive UIs in a few minutes.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -30,7 +30,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'ignore',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -93,26 +93,16 @@ const config = {
             position: 'left',
             label: 'Concepts',
           },
-          {to: '/blog',
-            label: 'References',
-            position: 'left'
-          },
-          {to: '/docs/getStarted/introduction',
-            label: 'Tutorials',
-            position: 'left'
-          },
           {
             href: 'https://www.youtube.com/@TechnicalWriti6',
             label: 'Community',
             position: 'right',
-
           },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
           },
-
         ],
       },
       footer: {
@@ -121,20 +111,6 @@ const config = {
           {
             title: 'Learn Refract',
             items: [
-              {
-                label: 'Quickstart',
-                to: '/docs/getStarted/quickstart',
-              },
-                {
-                label: 'Installation',
-                to: '/docs/getStarted/installation',
-              },
-              {
-                label: 'Components',
-                to: '/docs/getStarted/components',
-              },
-
-
             ],
           },
           {
@@ -157,10 +133,6 @@ const config = {
           {
             title: 'Resources',
             items: [
-              {
-                label: 'API Reference',
-                to: '/docs/',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
